@@ -45,13 +45,20 @@ function App() {
     const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
-       setAllEvents([...allEvents, newEvent]);
-        // if(newEvent?<Error></Error> : setAllEvents([...allEvents, newEvent]));
-        
+      // setAllEvents([...allEvents, newEvent]);
+        //  if(newEvent.start?<Error></Error> : setAllEvents([...allEvents, newEvent]));
+        console.log(allEvents.start)
+        if(allEvents.start === newEvent.start){
+           console.log('error');
+        }
+        else{
+            setAllEvents([...allEvents, newEvent]);
+        }
     }
 
     return (
         <div className="App">
+            <h1 className="bg-info">welcome to my Calander Schedule</h1>
             <h1>Calendar</h1>
             <h2>Add New Event</h2>
             <div>
